@@ -17,6 +17,6 @@
     "mongoose": "^6.2.9"
   },
   "scripts": {
-    "dev": "nodemon --watch './**/*.ts' --exec 'node --loader ts-node/esm' src/index.ts"
+    "dev": "nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/index.ts"
   }
 }

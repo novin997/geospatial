@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import locationSchema from "./Model/locationSchema";
+import locationRouter from "./Routers/locationRouter";
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
@@ -25,30 +25,4 @@ app.listen(PORT, (): void => {
   console.log(`Server Running here 👉 https://localhost:${PORT}`);
 });
 
-const temp = {
-  "type": "Polygon",
-  "coordinates": [
-    [
-      [
-        103.89770507812499,
-        1.2808305026090836
-      ],
-      [
-        103.89427185058594,
-        1.2087497436491068
-      ],
-      [
-        103.97289276123047,
-        1.2008550660203365
-      ],
-      [
-        103.96602630615234,
-        1.2839196334992269
-      ],
-      [
-        103.89770507812499,
-        1.2808305026090836
-      ]
-    ]
-  ]
-}
+app.use("/location", locationRouter);
